@@ -13,7 +13,6 @@ import sys
 from src.controllers.paste_controller import PastesController
 from src.entities.paste import Paste
 
-
 LINK_PATH = '//tr/td[1]/a/@href'
 DATE_PATH = '//div[@class="date"]/span/@title'
 BASIC_URL = 'https://pastebin.com'
@@ -105,3 +104,10 @@ class Crawler:
             end = datetime.datetime.now()
             duration = (end - start).total_seconds()
             sleep(120 - duration)
+
+
+def main():
+    Crawler().timer_task(loops=5)
+
+if __name__ == '__main__':
+    main()
